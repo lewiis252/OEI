@@ -11,7 +11,7 @@ for (oproc in seq(0.1, 1, 0.05)) {
 
 # zadanie 2
 n <- 10
-kwota_pocz <- 5
+kwota_pocz <- 10
 for (oproc in seq(0.1, 1, 0.05)) {
   if (kwota_pocz+n*kwota_pocz*oproc == 7*kwota_pocz){
     cat('Szukane oprocentowanie to ', oproc*100, '%')
