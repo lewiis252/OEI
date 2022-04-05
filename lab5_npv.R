@@ -53,3 +53,8 @@ NPV(r, przeplywy)
 npv(0.2, przeplywy)
 
 # zadanie 4
+przeplywy <- c(-1000,90,220,220,500,700)
+r <- calculate_r(uw=1, kw=0.19)
+npv(r, przeplywy)
+NPV(r, przeplywy)
+
