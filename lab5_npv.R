@@ -4,15 +4,7 @@ library(hash)
 
 my_NPV <- function (r, przeplywy){
   suma <- 0
-  for (t in seq(1, length(przeplywy))) {
-    suma <- suma + przeplywy[t] / ((1+r)^(t-1))
-  }
-  suma
-}
-
-my_NPV <- function (r, przeplywy){
-  suma <- 0
-  for (t in seq(1, length(przeplywy))) {
+  for (t in seq_along(przeplywy)) {
     suma <- suma + przeplywy[t] / ((1+r)^(t-1))
   }
   suma
@@ -61,19 +53,3 @@ NPV(r, przeplywy)
 npv(0.2, przeplywy)
 
 # zadanie 4
-
-
-
-
-
-v <- c(15,16,5,9,47,2,3)
-
-# standardowa iteracja
-for (i in 1:length(v)){
-  cat(v[i], ' ')
-}
-
-# bezpoœrednio po elementach, znacznie czytelniej
-for (element in v){
-  cat(element, ' ')
-}

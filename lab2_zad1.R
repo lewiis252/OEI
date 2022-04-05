@@ -38,7 +38,7 @@ print(wariancja)
 # mediana
 sum(liczba_studentow)
 suma_skum <- 0
-for(i in 1:length(liczba_studentow)) {
+for(i in seq_along(liczba_studentow)) {
   suma_skum <- suma_skum + liczba_studentow[i];
   cat(i-1, "-", suma_skum, " ")
 }
