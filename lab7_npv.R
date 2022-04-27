@@ -67,12 +67,33 @@ for (i in 1:length(projektA)){
     s1 <- s1 + projektA[i]/(1+r)^i
   }
 }
-s1
+
 for (i in 1:length(projektA)){
   if(projektA[i] < 0){
     s2 <- s2 + projektA[i]/(1+r)^i
   }
 }
+s1
 s2
 abs(s1/s2)
 
+PI <- function(c, r=0.1){
+  s1 <- 0
+  s2 <- 0
+  for (i in 1:length(c)) {
+    if (c[i] > 0) {
+      s1 <- s1 + c[i] / (1 + r)^i
+    }
+  }
+
+  for (i in 1:length(c)) {
+    if (c[i] < 0) {
+      s2 <- s2 + c[i] / (1 + r)^i
+    }
+  }
+  abs(s1/s2)
+}
+PI(projektA, 0.2)
+PI(projektB, 0.2)
+PI(projektC, 0.2)
+PI(projektD, 0.2)
