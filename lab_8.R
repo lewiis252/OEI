@@ -67,13 +67,13 @@ MIRRB <- (s/s1)^(1/4)-1
 MIRRB
 
 # zmiany
-rgr <- 0.15
+r1 <- 0.15
 r <- 0.18
 
 
 s <- 0
 for (t in seq(1:length(NCFtAd))) {
-  s <- s + NCFtAd[t] * (1 + r)^(4 - t + 1)
+  s <- s + NCFtAd[t] * (1 + r1)^(4 - t + 1)
 }
 s
 
@@ -88,7 +88,7 @@ MIRRA
 
 s <- 0
 for (t in seq(1:length(NCFtBd))) {
-  s <- s + NCFtBd[t] * (1 + r)^(4 - t + 1)
+  s <- s + NCFtBd[t] * (1 + r1)^(4 - t + 1)
 }
 s
 
