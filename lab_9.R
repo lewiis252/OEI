@@ -64,7 +64,26 @@ ilosciowy_prog_rentownosci(Ks, c, z)
 # b)
 ilosciowy_prog_rentownosci(Ks, c, z)*c
 
+#zadaie 4
 x <- 1500
 c <- 20
 Ks <- 1000
 z <- 2.5
+
+# a)
+b <- Ks/(c-z)
+b
+# b)
+# nale¿y sprzedaæ 115 egzemplarzy aby uzyskaæ zysk 1000
+(1000/17.5)*2
+# c)
+c*0.4*x-Ks-z*x*0.4
+
+# zadanie 5
+x <- 1500
+c <- 25
+Ks <- 2320
+z <- 10
+
+# zysk operacyjny
+x*c-Ks-z*x
