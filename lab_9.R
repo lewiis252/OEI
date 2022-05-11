@@ -1,3 +1,4 @@
+# ZADANIE 1
 w1 <- c(1500,2500,3500)
 w2 <- c(1000,2000,3000,4000)
 p1 <- c(0.2,0.5,0.3)
@@ -26,4 +27,44 @@ r <- 0.18
 omega_npv <- omega_1/(1+r) + omega_2/(1+r)^2 - N
 omega_npv
 
+# zadanie 2
+Ks <- 40000
+c <- 400
+z <- 200
 
+ilosciowy_prog_rentownosci <- function (Ks, c, z) {
+  BEP <- Ks/(c-z)
+  # cat('\n Iloœciowy próg rentownoœci wynosi', BEP)
+  return(BEP)
+}
+
+ilosciowy_prog_rentownosci(Ks, c, z) # function in lab_4
+
+# cena wyrobu obni¿ona o 100, koszty zmienne wzrosn¹ o 50
+ilosciowy_prog_rentownosci(Ks, c-100, z+50)
+
+cena_minimalna <- function(z, Ks, xz) {
+  cena_min <- z + Ks/xz
+  # cat('\n Cena minimalna wynosi', cena_min)
+  return(cena_min)
+}
+z <- 300
+xz <- 200
+
+cena_minimalna(z, Ks*0.8, xz)
+
+# zadanie 3
+Ks <- 5000
+c <- 50
+z <- 30
+
+#a)
+ilosciowy_prog_rentownosci(Ks, c, z)
+
+# b)
+ilosciowy_prog_rentownosci(Ks, c, z)*c
+
+x <- 1500
+c <- 20
+Ks <- 1000
+z <- 2.5
