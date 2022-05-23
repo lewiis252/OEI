@@ -69,7 +69,7 @@ for (t in seq(1:length(NCFtAu))) {
 }
 s1
 
-MIRRA <- (s/s1)^(1/4)-1
+MIRRA <- (s/s1)^(1/n)-1
 MIRRA
 
 s <- 0
@@ -84,10 +84,10 @@ for (t in seq(1:length(NCFtBu))) {
 }
 s1
 
-MIRRB <- (s/s1)^(1/4)-1
+MIRRB <- (s/s1)^(1/n)-1
 MIRRB
 
-# cat('here' ,MIRRA, MIRRB)
+cat('here' ,MIRRA, MIRRB)
 
 # MIRRA =  0.1973207 > r_gr, MIRRB = 0.1552197 > r_gr
 # obie inwestycje s¹ op³acalne, bardziej op³acalny jest projekt A
@@ -101,8 +101,8 @@ r_gr <- 0.15
 NCFtAd <- c(0,17800,22900,31000,29800,28900,28600,28600,38700)
 NCFtAu <- c(-74000,0,0,0,0,0,0,0,0)
 
-n  <-  length(przeplywyA)-1
-
+n  <-  length(przeplywy)-1
+n
 s <- 0
 for (t in seq(1:length(NCFtAd))) {
   s <- s + NCFtAd[t] * (1 + r_rei)^(n - t + 1)
@@ -115,14 +115,30 @@ for (t in seq(1:length(NCFtAu))) {
 }
 s1
 
-MIRRA <- (s/s1)^(1/4)-1
+MIRRA <- (s/s1)^(1/n)-1
 MIRRA
 
 # MIRR =  0.2979622 > r_gr inwestycja jest op³acalna
 
 # zadanie 6
-przeplywy <- c(-15000,)
 r_gr  <- 0.18
 stopa_podatkowa <- 0.19
 
-# a)
+
+przychody <- c(15760,13480,14410,15200,14800)
+koszty <- c(11880,10020,10170,11280,11160)
+naklad_poczatkowy <- 15000
+
+zysk_brutto <- przychody - koszty
+podatek <- stopa_podatkowa * zysk_brutto
+zysk_netto <- zysk_brutto - podatek
+
+sredni_zysk_netto <- mean(zysk_netto)
+
+koncowa_wart_zaangazowanegp_kapitalu_a <- naklad_poczatkowy - 5 * 3000
+koncowa_wart_zaangazowanegp_kapitalu_b <- naklad_poczatkowy - 5 * 2500
+
+ksiegowa_stopa_zwrotu_a <- 2*sredni_zysk_netto/(naklad_poczatkowy+koncowa_wart_zaangazowanegp_kapitalu_a)
+ksiegowa_stopa_zwrotu_b <- 2*sredni_zysk_netto/(naklad_poczatkowy+koncowa_wart_zaangazowanegp_kapitalu_b)
+
+# mamy ARR1 > ARR_gr i ARR2 > ARR_gr obie inwestycje op³acalne
