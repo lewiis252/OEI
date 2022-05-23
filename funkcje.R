@@ -97,3 +97,13 @@ porownywarka_zwrotow <- function (lista) {
   }
   cat('\n Najlepsza inwestycja to ', best_index)
 }
+
+NPV <- function (r, przeplywy){
+  suma <- 0
+  t <- 0
+  for (kwota in przeplywy){
+    suma <- suma + kwota/((1+r)^t)
+    t <- t + 1
+  }
+  suma
+}
