@@ -39,7 +39,7 @@ suma <- 0
     t <- t + 1
   }
 
-suma
+suma # = npv
 # npv =  -9480.519 > 0, inwestycja jest op³acalna.
 
 # zadanie 4
@@ -87,5 +87,42 @@ s1
 MIRRB <- (s/s1)^(1/4)-1
 MIRRB
 
-cat('here' ,MIRRA, MIRRB)
-# MIRRA =  0.1973207, MIRRB = 0.1552197
+# cat('here' ,MIRRA, MIRRB)
+
+# MIRRA =  0.1973207 > r_gr, MIRRB = 0.1552197 > r_gr
+# obie inwestycje s¹ op³acalne, bardziej op³acalny jest projekt A
+
+# zadanie 5
+przeplywy <- c(-74000,17800,22900,31000,29800,28900,28600,28600,38700)
+r <- 0.14
+r_rei <- 0.17
+r_gr <- 0.15
+
+NCFtAd <- c(0,17800,22900,31000,29800,28900,28600,28600,38700)
+NCFtAu <- c(-74000,0,0,0,0,0,0,0,0)
+
+n  <-  length(przeplywyA)-1
+
+s <- 0
+for (t in seq(1:length(NCFtAd))) {
+  s <- s + NCFtAd[t] * (1 + r_rei)^(n - t + 1)
+}
+s
+
+s1 <- 0
+for (t in seq(1:length(NCFtAu))) {
+  s1 <- s1 + abs(NCFtAu[t]) / (1 + r)^(t - 1)
+}
+s1
+
+MIRRA <- (s/s1)^(1/4)-1
+MIRRA
+
+# MIRR =  0.2979622 > r_gr inwestycja jest op³acalna
+
+# zadanie 6
+przeplywy <- c(-15000,)
+r_gr  <- 0.18
+stopa_podatkowa <- 0.19
+
+# a)
