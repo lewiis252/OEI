@@ -138,7 +138,9 @@ sredni_zysk_netto <- mean(zysk_netto)
 koncowa_wart_zaangazowanegp_kapitalu_a <- naklad_poczatkowy - 5 * 3000
 koncowa_wart_zaangazowanegp_kapitalu_b <- naklad_poczatkowy - 5 * 2500
 
+# ARR1
 ksiegowa_stopa_zwrotu_a <- 2*sredni_zysk_netto/(naklad_poczatkowy+koncowa_wart_zaangazowanegp_kapitalu_a)
+# ARR2
 ksiegowa_stopa_zwrotu_b <- 2*sredni_zysk_netto/(naklad_poczatkowy+koncowa_wart_zaangazowanegp_kapitalu_b)
 
 # mamy ARR1 > ARR_gr i ARR2 > ARR_gr obie inwestycje op³acalne
