@@ -19,7 +19,7 @@ stopa_inflacji_w_okresie <- function(wektor_inflacji) {
   iloczyn - 1
 }
 
-przecietna_inflacja_mies <- function(wektor_inflacji) {
+przecietna_inflacja_w_okresie <- function(wektor_inflacji) {
   iloczyn <- 1
   for (stopa_mies in wektor_inflacji) {
     iloczyn <- iloczyn * (1 + stopa_mies)
@@ -28,7 +28,9 @@ przecietna_inflacja_mies <- function(wektor_inflacji) {
 }
 
 stopa_inflacji_w_okresie(inflacja)
-przecietna_inflacja_mies(inflacja)
+# kwartalnastopa inflacji to 0.06224432
+przecietna_inflacja_w_okresie(inflacja)
+# przeciêtna miesiêczna inflacja to 0.02033192
 
 
 # zadanie 2
@@ -40,26 +42,17 @@ lata <- 2
 i_nom <- ((do_oddania)/pozyczka)^(1/lata)-1
 
 i_real <- (i_nom-i_inf)/(1+i_inf)
-i_real
+
+# realna roczna stopa oprocentowania wynosi 0.05331261
 
 # b)
 inflacja <- c(0.046, 0.048)
 
-iloczyn <- 1
-for (stopa in inflacja) {
-  iloczyn <- iloczyn * (1 + stopa)
-}
-iloczyn
-przecietna_inflacja_mies <- (iloczyn)^(1 / length(inflacja)) - 1
-przecietna_inflacja_mies
-stopa_inflacji_w_kwartale <- iloczyn - 1
+przecietna_inflacja_roczna <- przecietna_inflacja_w_okresie(inflacja)
 
-przecietna_inflacja_mies <- (iloczyn)^(1 / length(inflacja)) - 1
-przecietna_inflacja_mies
-przecietna_inflacja_mies_alternatywnie <- (1 + stopa_inflacji_w_kwartale)^(1 / length(inflacja)) - 1
-przecietna_inflacja_mies_alternatywnie
-inflacja_realna <- (i_nom - przecietna_inflacja_mies)/(1+przecietna_inflacja_mies)
-inflacja_realna
+i_real <- (i_nom - przecietna_inflacja_roczna)/(1+przecietna_inflacja_roczna)
+# stopa realna wynosi 0.04627088
+
 # zadanie 3
 
 # a)
@@ -73,6 +66,16 @@ i_real <- (i_nom-i_inf)/(1+i_inf)
 i_real
 
 # b)
+inflacja <- c(0.028, 0.032, 0.034)
+i_inf <- przecietna_inflacja_w_okresie(inflacja)
+i_real <- (i_nom-i_inf)/(1+i_inf)
+# realna stopa oprocentowania po¿yczki wynosi 0.06216709
+
+# c)
+inflacja <- c(0.028, 0.033, 0.033)
+i_inf <- przecietna_inflacja_w_okresie(inflacja)
+i_real <- (i_nom-i_inf)/(1+i_inf)
+# realna stopa oprocentowania po¿yczki wynosi 0.06216675
 
 # zadanie 4
 depozyt <- 5000
@@ -130,6 +133,4 @@ wart_A_realna <- depozyt*(1+oprocentowanie_realne)
 wart_A_realna
 wart_B_realna <- depozyt/(1+i_inf)
 wart_B_realna
-
-# zadanie 6
 
