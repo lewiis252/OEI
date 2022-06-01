@@ -56,4 +56,9 @@ znajdz_nominalny_wzrost <- function (zadane_i_real, stopa_inflacji, wzrost_srodk
 znajdz_nominalny_wzrost(0.1, stopa_inflacji, wzrost_srodkow)
 
 # zadanie 3
+pozyczka <- 12000
+odsetki <- 2000
+i_inf <- 0.03
+i_nom <- ((pozyczka+odsetki)/pozyczka)^(1/2)-1
 
+i_real <- (i_nom-i_inf)/(1+i_inf)
